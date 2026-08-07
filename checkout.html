@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Paiement — Kelly Shoes</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="header-root"></div>
+<div class="mobile-nav" id="mobile-nav"></div>
+<div id="cart-root"></div>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Étape finale</div>
+        <h1 class="section-title">Finaliser ma commande</h1>
+      </div>
+    </div>
+
+    <div class="checkout-grid">
+      <form class="checkout-card" id="checkout-form" novalidate>
+        <h2>Informations de livraison</h2>
+
+        <div class="form-row">
+          <label>Nom complet <span style="color:var(--danger)">*</span></label>
+          <input type="text" id="nomClient" placeholder="Ex : Awa Koné" required/>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label>Téléphone Mobile Money <span style="color:var(--danger)">*</span></label>
+            <input type="tel" id="numeroClient" placeholder="Ex : 07 00 00 00 00" required/>
+          </div>
+          <div class="form-row">
+            <label>Email (optionnel)</label>
+            <input type="email" id="emailClient" placeholder="ton@email.com"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Ville / Pays <span style="color:var(--danger)">*</span></label>
+          <input type="text" id="villeClient" placeholder="Ex : Abidjan, Côte d'Ivoire" required/>
+        </div>
+
+        <div class="form-row">
+          <label>Adresse de livraison <span style="color:var(--danger)">*</span></label>
+          <textarea id="adresseClient" rows="3" placeholder="Quartier, rue, repère..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="pay-btn">
+          <span id="pay-btn-text">🔐 Payer maintenant</span>
+        </button>
+        <div class="checkout-error" id="checkout-error"></div>
+      </form>
+
+      <aside class="order-summary">
+        <h3>Récapitulatif</h3>
+        <div id="summary-lines"></div>
+        <div class="summary-total">
+          <span>Total</span>
+          <span id="summary-total">0 FCFA</span>
+        </div>
+        <div class="secure-note">🔒 Paiement sécurisé via MoneyFusion (Mobile Money)</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+  window.SiteChrome.mount('shop');
+</script>
+</body>
+</html>

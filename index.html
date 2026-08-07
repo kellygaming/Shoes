@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kelly Shoes — Sneakers premium, livrées chez vous</title>
+<meta name="description" content="Découvrez notre sélection de sneakers premium : Adidas, Jordan, Nike, Timberland. Pointures 41, 44, 45. Paiement Mobile Money sécurisé via MoneyFusion."/>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="header-root"></div>
+<div class="mobile-nav" id="mobile-nav"></div>
+<div id="cart-root"></div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <span class="hero-word" id="hero-word">STYLE</span>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div>
+        <span class="hero-eyebrow">✦ Nouvelle collection</span>
+        <h1 class="hero-title" id="hero-product-name">Trouvez votre grandeur</h1>
+        <p class="hero-text">Des sneakers pensées pour le style et la confiance. Matériaux premium, design audacieux, confort à chaque pas.</p>
+        <div class="hero-cta-row">
+          <a href="boutique.html" class="btn btn-light">Voir tous les produits ↗</a>
+          <a href="#featured" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6);color:#fff;">Découvrir</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-product">
+      <div class="hero-shoe-wrap">
+        <img id="hero-shoe-img" src="images/products/placeholder.svg" alt="Sneaker vedette"/>
+      </div>
+      <div class="hero-side-panel">
+        <h4>Choisissez votre couleur</h4>
+        <div class="swatches" id="hero-swatches"></div>
+        <h4>Choisissez votre pointure</h4>
+        <div class="size-pills" id="hero-sizes"></div>
+        <div class="hero-price" id="hero-product-price">—</div>
+        <button class="btn btn-light btn-block" id="hero-add-btn">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section class="section section-tight" id="faq">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>Livraison rapide</h3>
+        <p>Livraison partout en Côte d'Ivoire et dans la sous-région, suivi de commande inclus.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Paiement sécurisé</h3>
+        <p>Payez en toute confiance via Mobile Money (Orange Money, Wave…) grâce à MoneyFusion.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">↩️</div>
+        <h3>Stock en temps réel</h3>
+        <p>Nos pointures et notre stock sont mis à jour en direct — plus de mauvaise surprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS ============ -->
+<section class="section section-alt" id="featured">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Sélection</div>
+        <h2 class="section-title">Nos meilleures paires</h2>
+        <p class="section-sub">Une sélection de sneakers iconiques, en stock et prêtes à être livrées.</p>
+      </div>
+      <a href="boutique.html" class="btn btn-outline">Toute la boutique</a>
+    </div>
+    <div class="product-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/products.js"></script>
+<script src="js/hero.js"></script>
+<script>
+  window.SiteChrome.mount('home');
+  window.ProductUI.mountGrid('featured-grid', { limit: 4 });
+</script>
+</body>
+</html>

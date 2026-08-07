@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Merci pour votre commande — Kelly Shoes</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="header-root"></div>
+<div class="mobile-nav" id="mobile-nav"></div>
+<div id="cart-root"></div>
+
+<section class="success-wrap">
+  <div>
+    <div class="success-icon">✓</div>
+    <h1>Merci pour votre commande !</h1>
+    <p>Votre paiement a été reçu. Notre équipe prépare votre commande et vous contactera au numéro fourni pour organiser la livraison.</p>
+    <a href="boutique.html" class="btn btn-primary">Continuer mes achats</a>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/partials.js"></script>
+<script>
+  window.SiteChrome.mount('shop');
+  // La commande a été payée : on vide le panier local.
+  window.Cart.clear();
+</script>
+</body>
+</html>

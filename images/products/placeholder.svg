@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#f2f2f5"/>
+  <g fill="none" stroke="#c7c7d1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M70 260c0-20 10-35 28-45l70-40c10-6 22-9 34-9h60c26 0 44 14 56 34l18 30c8 13 20 22 35 26l19 5c8 2 14 9 14 17v22a10 10 0 0 1-10 10H90c-11 0-20-9-20-20v-30z"/>
+    <path d="M96 260c8-14 24-24 42-24h30"/>
+    <path d="M240 166l-14 46"/>
+    <path d="M280 166l-10 46"/>
+    <path d="M320 172l-6 42"/>
+  </g>
+  <text x="200" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#9a9aa6">Photo à venir</text>
+</svg>
