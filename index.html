@@ -76,6 +76,38 @@
   </div>
 </section>
 
+<!-- ============ EMOTION / BRAND STORY ============ -->
+<section class="emotion-section" id="emotion">
+  <div class="container emotion-grid">
+    <div class="emotion-media">
+      <video id="emotion-video" muted loop playsinline preload="none" poster="images/banners/emotion-poster.jpg">
+        <source src="videos/lifestyle-court.mp4" type="video/mp4"/>
+      </video>
+      <div class="emotion-media-badge">🔥 Sneaker culture</div>
+    </div>
+    <div class="emotion-text">
+      <div class="section-eyebrow">L'attitude commence aux pieds</div>
+      <h2>Bien s'habiller, ça commence par <em>ce que vous avez aux pieds</em></h2>
+      <p>Une bonne paire ne se contente pas d'habiller vos pieds : elle change votre démarche, votre posture, la façon dont on vous regarde. S'offrir des chaussures de qualité, ce n'est pas un détail — c'est la base de tout style qui se respecte.</p>
+      <div class="emotion-points">
+        <div class="emotion-point">
+          <div class="emotion-point-icon">⚡</div>
+          <div><strong>Confiance immédiate</strong><span>La bonne paire change la façon dont vous vous tenez.</span></div>
+        </div>
+        <div class="emotion-point">
+          <div class="emotion-point-icon">🛡️</div>
+          <div><strong>Qualité qui dure</strong><span>Des matériaux premium pensés pour encaisser le quotidien.</span></div>
+        </div>
+        <div class="emotion-point">
+          <div class="emotion-point-icon">✨</div>
+          <div><strong>Un style qui vous ressemble</strong><span>Chaque paire raconte quelque chose de vous, avant même que vous parliez.</span></div>
+        </div>
+      </div>
+      <a href="boutique.html" class="btn btn-primary">Choisir ma paire ↗</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CATEGORIES ============ -->
 <section class="section section-tight">
   <div class="container">
@@ -209,6 +241,32 @@
 <script>
   window.SiteChrome.mount('home');
   window.ProductUI.mountGrid('featured-grid', { limit: 4 });
+
+  (function () {
+    const section = document.getElementById('emotion');
+    const video = document.getElementById('emotion-video');
+    if (!section || !video) return;
+
+    let loaded = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('in-view');
+            if (!loaded) {
+              loaded = true;
+              video.load();
+            }
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+  })();
 </script>
 </body>
 </html>
