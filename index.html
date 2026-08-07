@@ -32,7 +32,13 @@
 
     <div class="hero-product">
       <div class="hero-shoe-wrap">
+        <button type="button" class="hero-arrow hero-arrow-prev" id="hero-prev" aria-label="Modèle précédent">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
         <img id="hero-shoe-img" src="images/products/placeholder.svg" alt="Sneaker vedette"/>
+        <button type="button" class="hero-arrow hero-arrow-next" id="hero-next" aria-label="Modèle suivant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
       <div class="hero-side-panel">
         <h4>Choisissez votre couleur</h4>
@@ -43,6 +49,7 @@
         <button class="btn btn-light btn-block" id="hero-add-btn">Ajouter au panier</button>
       </div>
     </div>
+    <div class="hero-dots" id="hero-dots"></div>
   </div>
 </section>
 
@@ -69,6 +76,44 @@
   </div>
 </section>
 
+<!-- ============ CATEGORIES ============ -->
+<section class="section section-tight">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Explorer</div>
+        <h2 class="section-title">Par catégorie</h2>
+      </div>
+    </div>
+    <div class="category-grid">
+      <a class="category-tile" href="boutique.html">
+        <img src="images/banners/category-running.jpg" alt="Running"/>
+        <div class="category-tile-body">
+          <span class="category-tile-eyebrow">Performance</span>
+          <h3>Running</h3>
+          <span class="category-tile-link">Voir la collection →</span>
+        </div>
+      </a>
+      <a class="category-tile" href="boutique.html">
+        <img src="images/banners/category-basketball.jpg" alt="Basketball"/>
+        <div class="category-tile-body">
+          <span class="category-tile-eyebrow">Terrain</span>
+          <h3>Basketball</h3>
+          <span class="category-tile-link">Voir la collection →</span>
+        </div>
+      </a>
+      <a class="category-tile" href="boutique.html">
+        <img src="images/products/adidas-gazelle-bold.webp" alt="Lifestyle" style="object-fit:contain;background:#eef0f4;padding:20px;"/>
+        <div class="category-tile-body">
+          <span class="category-tile-eyebrow">Quotidien</span>
+          <h3>Lifestyle</h3>
+          <span class="category-tile-link">Voir la collection →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FEATURED PRODUCTS ============ -->
 <section class="section section-alt" id="featured">
   <div class="container">
@@ -81,6 +126,75 @@
       <a href="boutique.html" class="btn btn-outline">Toute la boutique</a>
     </div>
     <div class="product-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<!-- ============ PROMO BANNER ============ -->
+<section class="section-tight">
+  <div class="container">
+    <div class="promo-banner">
+      <div class="promo-banner-text">
+        <div class="section-eyebrow">Coloris exclusif</div>
+        <h2>Un vert qui ne passe pas inaperçu</h2>
+        <p>La Air Jordan 4 dans un coloris édition limitée. Disponible en quantité très restreinte — craquez avant les autres.</p>
+        <a href="boutique.html" class="btn btn-light">Découvrir la collection ↗</a>
+      </div>
+      <div class="promo-banner-media">
+        <img src="images/banners/promo-jordan4-green.jpg" alt="Air Jordan 4 coloris vert exclusif"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Avis clients</div>
+        <h2 class="section-title">Ils nous font confiance</h2>
+      </div>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Commande reçue en 2 jours à Abidjan, la pointure était parfaite. Le paiement Mobile Money s'est fait sans problème."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div><strong>Awa K.</strong><span>Cocody, Abidjan</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Qualité au rendez-vous, exactement comme sur les photos. Le service client a répondu très vite sur WhatsApp."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div><strong>Moussa D.</strong><span>Yopougon, Abidjan</span></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p>"Ma deuxième commande chez Kelly Shoes. Toujours du stock à jour, aucune mauvaise surprise sur les pointures."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">F</div>
+          <div><strong>Fatou S.</strong><span>Bouaké</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA CONTACT ============ -->
+<section class="section-tight">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Une question avant de commander ?</h2>
+      <p>Notre équipe répond rapidement sur WhatsApp pour vous aider à choisir la bonne pointure ou suivre votre commande.</p>
+      <div class="cta-banner-row">
+        <a href="https://wa.me/2250501310360" target="_blank" rel="noopener" class="btn btn-light">💬 WhatsApp</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:#fff;">Voir la page contact</a>
+      </div>
+    </div>
   </div>
 </section>
 
