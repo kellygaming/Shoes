@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Boutique — Kelly Shoes</title>
+<meta name="description" content="Toute la collection Kelly Shoes : Adidas, Jordan, Nike, Timberland. Pointures 41, 44, 45 disponibles."/>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div id="header-root"></div>
+<div class="mobile-nav" id="mobile-nav"></div>
+<div id="cart-root"></div>
+
+<section class="boutique-hero">
+  <div class="container">
+    <h1>La boutique</h1>
+    <p>Toute notre collection de sneakers premium. Filtrez par marque et trouvez votre pointure.</p>
+  </div>
+</section>
+
+<section class="section-tight">
+  <div class="container">
+    <div class="filters-bar" id="filters-bar">
+      <button class="filter-chip active" data-brand="all">Tout</button>
+    </div>
+    <div class="product-grid" id="shop-grid"></div>
+  </div>
+</section>
+
+<div id="footer-root"></div>
+
+<script src="js/config.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/products.js"></script>
+<script>
+  window.SiteChrome.mount('shop');
+
+  (async function () {
+    const allProducts = await window.ProductUI.mountGrid('shop-grid', {});
+    const filtersBar = document.getElementById('filters-bar');
+    const brands = [...new Set(allProducts.map((p) => p.brand))];
+
+    brands.forEach((brand) => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-chip';
+      btn.textContent = brand;
+      btn.dataset.brand = brand;
+      filtersBar.appendChild(btn);
+    });
+
+    filtersBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-chip');
+      if (!btn) return;
+      filtersBar.querySelectorAll('.filter-chip').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      const brand = btn.dataset.brand;
+      window.ProductUI.mountGrid('shop-grid', {
+        filter: brand === 'all' ? null : (p) => p.brand === brand
+      });
+    });
+  })();
+</script>
+</body>
+</html>
