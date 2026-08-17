@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Kelly Shoes — Sneakers premium, livrées chez vous</title>
+<title>Kelly Shoes - Sneakers premium, livrées chez vous</title>
 <meta name="description" content="Découvrez notre sélection de sneakers premium : Adidas, Jordan, Nike, Timberland. Pointures 41, 44, 45. Paiement Mobile Money sécurisé via MoneyFusion."/>
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/style.css"/>
@@ -20,12 +20,12 @@
   <div class="hero-inner">
     <div class="hero-top">
       <div>
-        <span class="hero-eyebrow">✦ Nouvelle collection</span>
+        <span class="hero-eyebrow">Nouvelle collection</span>
         <h1 class="hero-title" id="hero-product-name">Trouvez votre grandeur</h1>
-        <p class="hero-text">Des sneakers pensées pour le style et la confiance. Matériaux premium, design audacieux, confort à chaque pas.</p>
+        <p class="hero-text">Des sneakers pensées pour le style et la confiance. Matériaux premium, confort à chaque pas.</p>
         <div class="hero-cta-row">
-          <a href="boutique.html" class="btn btn-light">Voir tous les produits ↗</a>
-          <a href="#featured" class="btn btn-outline" style="border-color:rgba(255,255,255,0.6);color:#fff;">Découvrir</a>
+          <a href="boutique.html" class="btn btn-light">Voir la boutique</a>
+          <a href="#featured" class="btn btn-outline btn-on-dark">Découvrir</a>
         </div>
       </div>
     </div>
@@ -33,11 +33,11 @@
     <div class="hero-product">
       <div class="hero-shoe-wrap">
         <button type="button" class="hero-arrow hero-arrow-prev" id="hero-prev" aria-label="Modèle précédent">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
         </button>
         <img id="hero-shoe-img" src="images/products/placeholder.svg" alt="Sneaker vedette"/>
         <button type="button" class="hero-arrow hero-arrow-next" id="hero-next" aria-label="Modèle suivant">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </button>
       </div>
       <div class="hero-side-panel">
@@ -45,7 +45,7 @@
         <div class="swatches" id="hero-swatches"></div>
         <h4>Choisissez votre pointure</h4>
         <div class="size-pills" id="hero-sizes"></div>
-        <div class="hero-price" id="hero-product-price">—</div>
+        <div class="hero-price" id="hero-product-price">&nbsp;</div>
         <button class="btn btn-light btn-block" id="hero-add-btn">Ajouter au panier</button>
       </div>
     </div>
@@ -53,26 +53,34 @@
   </div>
 </section>
 
-<!-- ============ FEATURES ============ -->
-<section class="section section-tight" id="faq">
+<!-- ============ RÉASSURANCE ============ -->
+<!-- Rangée séparée par des filets verticaux, sans cartes : la rangée de
+     trois cartes identiques est le layout par défaut des sites générés. -->
+<section class="section-tight" id="faq">
   <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🚚</div>
-        <h3>Livraison rapide</h3>
-        <p>Livraison partout en Côte d'Ivoire et dans la sous-région, suivi de commande inclus.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔒</div>
-        <h3>Paiement sécurisé</h3>
-        <p>Payez en toute confiance via Mobile Money (Orange Money, Wave…) grâce à MoneyFusion.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">↩️</div>
-        <h3>Stock en temps réel</h3>
-        <p>Nos pointures et notre stock sont mis à jour en direct — plus de mauvaise surprise.</p>
-      </div>
-    </div>
+    <ul class="assurance-row">
+      <li class="assurance">
+        <span class="assurance-icon" data-icon="truck" data-icon-size="22"></span>
+        <div class="assurance-body">
+          <strong>Livraison rapide</strong>
+          <span>Partout en Côte d'Ivoire et dans la sous-région, suivi de commande inclus.</span>
+        </div>
+      </li>
+      <li class="assurance">
+        <span class="assurance-icon" data-icon="lock" data-icon-size="22"></span>
+        <div class="assurance-body">
+          <strong>Paiement sécurisé</strong>
+          <span>Mobile Money via MoneyFusion : Orange Money, Wave, MTN.</span>
+        </div>
+      </li>
+      <li class="assurance">
+        <span class="assurance-icon" data-icon="refresh" data-icon-size="22"></span>
+        <div class="assurance-body">
+          <strong>Stock en temps réel</strong>
+          <span>Pointures et disponibilités mises à jour en direct, sans mauvaise surprise.</span>
+        </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -83,27 +91,26 @@
       <video id="emotion-video" muted loop playsinline preload="none" poster="images/banners/emotion-poster.jpg">
         <source src="videos/lifestyle-court.mp4" type="video/mp4"/>
       </video>
-      <div class="emotion-media-badge">🔥 Sneaker culture</div>
+      <div class="emotion-media-badge">Sneaker culture</div>
     </div>
     <div class="emotion-text">
-      <div class="section-eyebrow">L'attitude commence aux pieds</div>
       <h2>Bien s'habiller, ça commence par <em>ce que vous avez aux pieds</em></h2>
-      <p>Une bonne paire ne se contente pas d'habiller vos pieds : elle change votre démarche, votre posture, la façon dont on vous regarde. S'offrir des chaussures de qualité, ce n'est pas un détail — c'est la base de tout style qui se respecte.</p>
+      <p>Une bonne paire ne se contente pas d'habiller vos pieds : elle change votre démarche, votre posture, la façon dont on vous regarde. S'offrir des chaussures de qualité n'est pas un détail. C'est la base de tout style qui se respecte.</p>
       <div class="emotion-points">
         <div class="emotion-point">
-          <div class="emotion-point-icon">⚡</div>
+          <span class="emotion-point-icon" data-icon="bolt" data-icon-size="20"></span>
           <div><strong>Confiance immédiate</strong><span>La bonne paire change la façon dont vous vous tenez.</span></div>
         </div>
         <div class="emotion-point">
-          <div class="emotion-point-icon">🛡️</div>
+          <span class="emotion-point-icon" data-icon="shield" data-icon-size="20"></span>
           <div><strong>Qualité qui dure</strong><span>Des matériaux premium pensés pour encaisser le quotidien.</span></div>
         </div>
         <div class="emotion-point">
-          <div class="emotion-point-icon">✨</div>
+          <span class="emotion-point-icon" data-icon="sparkle" data-icon-size="20"></span>
           <div><strong>Un style qui vous ressemble</strong><span>Chaque paire raconte quelque chose de vous, avant même que vous parliez.</span></div>
         </div>
       </div>
-      <a href="boutique.html" class="btn btn-primary">Choisir ma paire ↗</a>
+      <a href="boutique.html" class="btn btn-accent">Choisir ma paire</a>
     </div>
   </div>
 </section>
@@ -112,34 +119,28 @@
 <section class="section section-tight">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="section-eyebrow">Explorer</div>
-        <h2 class="section-title">Par catégorie</h2>
-      </div>
+      <h2 class="section-title">Par catégorie</h2>
     </div>
     <div class="category-grid">
       <a class="category-tile" href="boutique.html">
-        <img src="images/banners/category-running.jpg" alt="Running"/>
+        <img src="images/banners/category-running.jpg" alt="Sneakers de running"/>
         <div class="category-tile-body">
-          <span class="category-tile-eyebrow">Performance</span>
           <h3>Running</h3>
-          <span class="category-tile-link">Voir la collection →</span>
+          <span class="category-tile-link">Voir la collection</span>
         </div>
       </a>
       <a class="category-tile" href="boutique.html">
-        <img src="images/banners/category-basketball.jpg" alt="Basketball"/>
+        <img src="images/banners/category-basketball.jpg" alt="Sneakers de basketball"/>
         <div class="category-tile-body">
-          <span class="category-tile-eyebrow">Terrain</span>
           <h3>Basketball</h3>
-          <span class="category-tile-link">Voir la collection →</span>
+          <span class="category-tile-link">Voir la collection</span>
         </div>
       </a>
       <a class="category-tile" href="boutique.html">
-        <img src="images/products/adidas-gazelle-bold.webp" alt="Lifestyle" style="object-fit:contain;background:#eef0f4;padding:20px;"/>
+        <img src="images/products/adidas-gazelle-bold.webp" alt="Sneakers lifestyle" class="category-tile-product"/>
         <div class="category-tile-body">
-          <span class="category-tile-eyebrow">Quotidien</span>
           <h3>Lifestyle</h3>
-          <span class="category-tile-link">Voir la collection →</span>
+          <span class="category-tile-link">Voir la collection</span>
         </div>
       </a>
     </div>
@@ -151,7 +152,6 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <div class="section-eyebrow">Sélection</div>
         <h2 class="section-title">Nos meilleures paires</h2>
         <p class="section-sub">Une sélection de sneakers iconiques, en stock et prêtes à être livrées.</p>
       </div>
@@ -168,8 +168,8 @@
       <div class="promo-banner-text">
         <div class="section-eyebrow">Coloris exclusif</div>
         <h2>Un vert qui ne passe pas inaperçu</h2>
-        <p>La Air Jordan 4 dans un coloris édition limitée. Disponible en quantité très restreinte — craquez avant les autres.</p>
-        <a href="boutique.html" class="btn btn-light">Découvrir la collection ↗</a>
+        <p>La Air Jordan 4 dans un coloris édition limitée, disponible en quantité très restreinte.</p>
+        <a href="boutique.html" class="btn btn-light">Découvrir la collection</a>
       </div>
       <div class="promo-banner-media">
         <img src="images/banners/promo-jordan4-green.jpg" alt="Air Jordan 4 coloris vert exclusif"/>
@@ -182,31 +182,28 @@
 <section class="section">
   <div class="container">
     <div class="section-head">
-      <div>
-        <div class="section-eyebrow">Avis clients</div>
-        <h2 class="section-title">Ils nous font confiance</h2>
-      </div>
+      <h2 class="section-title">Ils nous font confiance</h2>
     </div>
     <div class="testimonial-grid">
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Commande reçue en 2 jours à Abidjan, la pointure était parfaite. Le paiement Mobile Money s'est fait sans problème."</p>
+        <div class="testimonial-stars" data-stars="5"></div>
+        <p>&laquo;&nbsp;Commande reçue en 2 jours à Abidjan, la pointure était parfaite. Le paiement Mobile Money s'est fait sans problème.&nbsp;&raquo;</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">A</div>
           <div><strong>Awa K.</strong><span>Cocody, Abidjan</span></div>
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Qualité au rendez-vous, exactement comme sur les photos. Le service client a répondu très vite sur WhatsApp."</p>
+        <div class="testimonial-stars" data-stars="5"></div>
+        <p>&laquo;&nbsp;Qualité au rendez-vous, exactement comme sur les photos. Le service client a répondu très vite sur WhatsApp.&nbsp;&raquo;</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">M</div>
           <div><strong>Moussa D.</strong><span>Yopougon, Abidjan</span></div>
         </div>
       </div>
       <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p>"Ma deuxième commande chez Kelly Shoes. Toujours du stock à jour, aucune mauvaise surprise sur les pointures."</p>
+        <div class="testimonial-stars" data-stars="5"></div>
+        <p>&laquo;&nbsp;Ma deuxième commande chez Kelly Shoes. Toujours du stock à jour, aucune mauvaise surprise sur les pointures.&nbsp;&raquo;</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">F</div>
           <div><strong>Fatou S.</strong><span>Bouaké</span></div>
@@ -223,8 +220,10 @@
       <h2>Une question avant de commander ?</h2>
       <p>Notre équipe répond rapidement sur WhatsApp pour vous aider à choisir la bonne pointure ou suivre votre commande.</p>
       <div class="cta-banner-row">
-        <a href="https://wa.me/2250501310360" target="_blank" rel="noopener" class="btn btn-light">💬 WhatsApp</a>
-        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:#fff;">Voir la page contact</a>
+        <a href="https://wa.me/2250501310360" target="_blank" rel="noopener" class="btn btn-light">
+          <span class="btn-icon" data-icon="whatsapp" data-icon-size="18"></span>WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-outline btn-on-dark">Voir la page contact</a>
       </div>
     </div>
   </div>
@@ -233,6 +232,7 @@
 <div id="footer-root"></div>
 
 <script src="js/config.js"></script>
+<script src="js/icons.js"></script>
 <script src="js/supabase.js"></script>
 <script src="js/cart.js"></script>
 <script src="js/partials.js"></script>

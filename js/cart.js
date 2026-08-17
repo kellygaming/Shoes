@@ -1,4 +1,4 @@
-// Panier partagé (localStorage) — utilisé sur toutes les pages.
+// Panier partagé (localStorage), utilisé sur toutes les pages.
 window.Cart = (function () {
   const STORAGE_KEY = 'kellyshoes_cart';
 

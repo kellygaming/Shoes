@@ -1,5 +1,5 @@
 /* ============================================================
-   KELLY SHOES — feuille de style principale
+   KELLY SHOES - feuille de style principale
    ============================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
@@ -10,10 +10,15 @@
   --paper: #ffffff;
   --paper-alt: #f6f6f8;
   --line: #e7e7ec;
-  --accent: #7c3aed;
-  --accent-2: #ec4899;
+  /* Accent unique de la marque : un rose profond. --accent-deep et
+     --accent-soft sont des nuances de CE rose (pour les dégradés), pas
+     une seconde couleur d'accent. */
+  --accent: #d6336c;
+  --accent-deep: #9c1f4c;
+  --accent-soft: #f2789f;
+  --accent-tint: #fdf2f6;
   --success: #16a34a;
-  --danger: #e11d48;
+  --danger: #dc2626;
   --radius: 16px;
   --radius-sm: 10px;
   --shadow: 0 10px 30px rgba(17, 17, 20, 0.08);
@@ -105,8 +110,18 @@ ul { list-style: none; }
   background: #fff; color: var(--ink);
 }
 .btn-light:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.btn-accent {
+  background: var(--accent); color: #fff;
+}
+.btn-accent:hover { background: var(--accent-deep); box-shadow: var(--shadow); }
+/* Variante de bouton contourné posée sur un fond sombre ou coloré. */
+.btn-on-dark {
+  border-color: rgba(255,255,255,0.55); color: #fff;
+}
+.btn-on-dark:hover { background: #fff; color: var(--ink); border-color: #fff; }
 .btn-block { width: 100%; }
 .btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn-icon { display: inline-flex; align-items: center; }
 
 .icon-btn {
   position: relative;
@@ -169,7 +184,7 @@ ul { list-style: none; }
   min-height: 640px;
   display: flex; align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--h1, #7c3aed), var(--h2, #4338ca));
+  background: linear-gradient(135deg, var(--h1, #d6336c), var(--h2, #7d1839));
   transition: background 0.6s ease;
   color: #fff;
 }
@@ -344,24 +359,28 @@ ul { list-style: none; }
 }
 .section-sub { color: var(--muted); max-width: 480px; margin-top: 8px; }
 
-/* ── FEATURES ── */
-.features-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+/* ── RÉASSURANCE ──
+   Groupée par filets verticaux plutôt que par des cartes : une carte ne se
+   justifie que si l'élévation traduit une vraie hiérarchie. */
+.assurance-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
-.feature-card {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
+.assurance {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 28px 32px;
 }
-.feature-icon {
-  width: 48px; height: 48px; border-radius: 14px;
-  background: var(--paper-alt);
+.assurance + .assurance { border-left: 1px solid var(--line); }
+.assurance-icon {
+  flex-shrink: 0;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--accent-tint);
+  color: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 16px; font-size: 1.4rem;
 }
-.feature-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-.feature-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+.assurance-body strong { display: block; font-size: 0.98rem; margin-bottom: 5px; }
+.assurance-body span { color: var(--muted); font-size: 0.9rem; line-height: 1.55; display: block; }
 
 /* ── EMOTION / BRAND STORY ── */
 .emotion-section {
@@ -389,7 +408,7 @@ ul { list-style: none; }
 .emotion-media::before {
   content: '';
   position: absolute; inset: -30%;
-  background: conic-gradient(from 0deg, var(--accent), var(--accent-2), #f97316, var(--accent));
+  background: conic-gradient(from 0deg, var(--accent-deep), var(--accent), var(--accent-soft), var(--accent-deep));
   filter: blur(60px);
   opacity: 0.55;
   z-index: -1;
@@ -424,7 +443,7 @@ ul { list-style: none; }
   transition: opacity .8s ease .15s, transform .8s ease .15s;
 }
 .emotion-section.in-view .emotion-text { opacity: 1; transform: translateY(0); }
-.emotion-text .section-eyebrow { color: #c084fc; }
+.emotion-text .section-eyebrow { color: var(--accent-soft); }
 .emotion-text h2 {
   font-family: var(--font-display);
   font-size: clamp(1.9rem, 3.6vw, 2.8rem);
@@ -433,7 +452,7 @@ ul { list-style: none; }
 }
 .emotion-text h2 em {
   font-style: normal;
-  background: linear-gradient(100deg, #c084fc, #f97316);
+  background: linear-gradient(100deg, var(--accent-soft), var(--accent));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
@@ -454,9 +473,9 @@ ul { list-style: none; }
 .emotion-section.in-view .emotion-point:nth-child(3) { transition-delay: .6s; }
 .emotion-point-icon {
   width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+  color: #fff;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1rem;
 }
 .emotion-point strong { display: block; font-size: 0.95rem; }
 .emotion-point span { font-size: 0.82rem; color: rgba(255,255,255,0.6); }
@@ -494,11 +513,9 @@ ul { list-style: none; }
 }
 .category-tile:hover img { transform: scale(1.06); }
 .category-tile-body { padding: 26px; color: #fff; }
-.category-tile-eyebrow {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-  opacity: 0.85;
-}
-.category-tile-body h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 6px 0 12px; }
+.category-tile-body h3 { font-family: var(--font-display); font-size: 1.5rem; margin: 0 0 12px; }
+/* Tuile dont le visuel est une photo produit détourée et non une photo d'ambiance. */
+.category-tile-product { object-fit: contain; background: #eef0f4; padding: 20px; }
 .category-tile-link {
   display: inline-flex; align-items: center; gap: 6px;
   font-weight: 700; font-size: 0.88rem; border-bottom: 1.5px solid #fff; padding-bottom: 2px;
@@ -534,12 +551,16 @@ ul { list-style: none; }
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 26px;
 }
-.testimonial-stars { color: #f59e0b; letter-spacing: 2px; margin-bottom: 14px; font-size: 0.95rem; }
+.testimonial-stars {
+  display: flex; gap: 3px; margin-bottom: 14px;
+  color: #f59e0b;
+}
+.testimonial-stars svg { fill: currentColor; stroke: none; }
 .testimonial-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 18px; }
 .testimonial-author { display: flex; align-items: center; gap: 12px; }
 .testimonial-avatar {
   width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   display: flex; align-items: center; justify-content: center;
   color: #fff; font-weight: 700; font-size: 0.9rem;
 }
@@ -584,14 +605,19 @@ ul { list-style: none; }
   width: 88%; transition: transform .3s ease;
 }
 .product-card:hover .product-media img { transform: scale(1.06) rotate(-3deg); }
+/* Sémantique des pastilles : le rose signale la marque et le positif,
+   le gris signale l'indisponibilité, le rouge est réservé aux erreurs
+   de formulaire. Un badge rupture de stock en rouge entrerait en
+   concurrence visuelle avec l'accent rose. */
 .product-tag {
   position: absolute; top: 12px; left: 12px;
-  background: var(--ink); color: #fff;
+  background: var(--accent); color: #fff;
   font-size: 0.68rem; font-weight: 700; letter-spacing: 0.5px;
   padding: 5px 10px; border-radius: 999px; text-transform: uppercase;
 }
 .product-tag.out {
-  background: var(--danger);
+  background: rgba(17,17,20,0.72);
+  backdrop-filter: blur(4px);
 }
 .product-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .product-brand { font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
@@ -742,8 +768,9 @@ ul { list-style: none; }
   display: flex; align-items: center; gap: 8px; margin-top: 18px;
   font-size: 0.8rem; color: var(--muted);
 }
+.secure-note-icon { display: inline-flex; color: var(--success); }
 .checkout-error {
-  display: none; background: rgba(225,29,72,0.08); border: 1px solid rgba(225,29,72,0.3);
+  display: none; background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.3);
   color: var(--danger); padding: 12px 16px; border-radius: var(--radius-sm);
   font-size: 0.88rem; font-weight: 600; margin-top: 14px;
 }
@@ -773,9 +800,10 @@ ul { list-style: none; }
 .contact-method:hover { border-color: var(--ink); box-shadow: var(--shadow); }
 .contact-method-icon {
   width: 46px; height: 46px; border-radius: 50%;
-  background: var(--paper-alt);
+  background: var(--accent-tint);
+  color: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0;
+  flex-shrink: 0;
 }
 .contact-method-body strong { display: block; font-size: 0.95rem; }
 .contact-method-body span { font-size: 0.85rem; color: var(--muted); }
@@ -791,7 +819,7 @@ ul { list-style: none; }
   position: relative;
   border-radius: 24px;
   overflow: hidden;
-  background: linear-gradient(135deg, #7c3aed, #4338ca);
+  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
   min-height: 420px;
   display: flex; align-items: center; justify-content: center;
 }
@@ -808,8 +836,9 @@ ul { list-style: none; }
   width: 84px; height: 84px; border-radius: 50%;
   background: rgba(22,163,74,0.1); color: var(--success);
   display: flex; align-items: center; justify-content: center;
-  font-size: 2.4rem; margin: 0 auto 24px;
+  margin: 0 auto 24px;
 }
+.success-icon svg { stroke-width: 2.25; }
 .success-wrap h1 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 12px; }
 .success-wrap p { color: var(--muted); max-width: 440px; margin: 0 auto 26px; }
 
@@ -856,7 +885,8 @@ ul { list-style: none; }
   .hero-side-panel { justify-self: stretch; }
   .checkout-grid { grid-template-columns: 1fr; }
   .order-summary { position: static; }
-  .features-grid { grid-template-columns: 1fr 1fr; }
+  .assurance-row { grid-template-columns: 1fr 1fr; }
+  .assurance:nth-child(3) { border-left: none; border-top: 1px solid var(--line); grid-column: 1 / -1; }
   .promo-banner { grid-template-columns: 1fr; }
   .promo-banner-media { min-height: 260px; order: -1; }
   .promo-banner-text { padding: 36px; }
@@ -887,7 +917,10 @@ ul { list-style: none; }
   .product-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   .product-body { padding: 12px; }
   .hero-cta-row .btn { flex: 1; }
-  .features-grid { grid-template-columns: 1fr; }
+  .assurance-row { grid-template-columns: 1fr; }
+  .assurance { padding: 22px 4px; }
+  .assurance + .assurance { border-left: none; border-top: 1px solid var(--line); }
+  .assurance:nth-child(3) { grid-column: auto; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero-side-panel { padding: 16px; }

@@ -1,4 +1,4 @@
-// Petit client REST pour Supabase (PostgREST) — pas besoin du SDK complet
+// Petit client REST pour Supabase (PostgREST) : pas besoin du SDK complet
 // pour de simples lectures publiques protégées par RLS.
 window.SupabaseREST = (function () {
   const { SUPABASE_URL, SUPABASE_ANON_KEY } = window.SHOES_CONFIG;

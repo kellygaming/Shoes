@@ -1,10 +1,13 @@
 // Hero de la page d'accueil : carrousel produit (flèches) + thème de couleur.
 (function () {
+  // Ambiances du héros. Le rose de la marque est l'état par défaut ; les
+  // autres restent des fonds sombres et sobres pour que la chaussure
+  // détourée ressorte sans concurrencer l'accent rose du reste du site.
   const THEMES = [
-    { h1: '#7c3aed', h2: '#4338ca', word: 'STYLE' },
-    { h1: '#fb7185', h2: '#f97316', word: 'FLEX' },
-    { h1: '#22c55e', h2: '#0d9488', word: 'STEP' },
-    { h1: '#ec4899', h2: '#a855f7', word: 'GLOW' }
+    { h1: '#d6336c', h2: '#7d1839', word: 'STYLE' },
+    { h1: '#1f2430', h2: '#0b0d12', word: 'FLEX' },
+    { h1: '#17624a', h2: '#0b3b2c', word: 'STEP' },
+    { h1: '#1e3a8a', h2: '#111c44', word: 'JUMP' }
   ];
 
   function applyTheme(hero, wordEl, theme) {
@@ -57,9 +60,19 @@
       });
     }
 
+    // Beaucoup de noms de produits contiennent déjà la marque ("Air Jordan 1
+    // Mid SE" pour la marque Jordan). Préfixer systématiquement donnerait
+    // "Jordan Air Jordan 1 Mid SE".
+    function fullTitle(product) {
+      const name = product.name || '';
+      const brand = product.brand || '';
+      if (!brand || name.toLowerCase().includes(brand.toLowerCase())) return name;
+      return brand + ' ' + name;
+    }
+
     function renderProduct() {
       const product = products[currentIndex];
-      nameEl.textContent = product.brand + ' — ' + product.name;
+      nameEl.textContent = fullTitle(product);
       priceEl.textContent = window.ProductUI.formatPrice(product.price);
 
       const map = window.ProductUI.sizeMap(product);
