@@ -42,7 +42,7 @@
       <aside class="cart-drawer" id="cart-drawer" aria-label="Panier">
         <div class="cart-head">
           <h3>Votre panier</h3>
-          <button class="cart-close" id="cart-close" aria-label="Fermer">✕</button>
+          <button class="cart-close" id="cart-close" aria-label="Fermer">${window.Icons.get('close', 16)}</button>
         </div>
         <div class="cart-body">
           <p id="cart-empty">Votre panier est vide pour le moment.</p>
@@ -66,7 +66,7 @@
         <div class="container">
           <div class="footer-grid">
             <div class="footer-brand">
-              <a href="index.html" class="logo"><span>KELLY</span><span class="dot" style="color:#c084fc">SHOES</span></a>
+              <a href="index.html" class="logo"><span>KELLY</span><span class="dot" style="color:var(--accent-soft)">SHOES</span></a>
               <p>Des sneakers premium sélectionnées pour le style et le confort. Livraison partout, paiement Mobile Money sécurisé.</p>
               <div class="footer-socials">
                 <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>

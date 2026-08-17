@@ -76,7 +76,7 @@ window.ProductUI = (function () {
           }
         }
         window.Cart.addItem(product, selectedSize);
-        addBtn.textContent = 'Ajouté ✓';
+        addBtn.textContent = 'Ajouté';
         setTimeout(() => (addBtn.textContent = 'Ajouter au panier'), 1200);
         if (window.openCartDrawer) window.openCartDrawer();
       });

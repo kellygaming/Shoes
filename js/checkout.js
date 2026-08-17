@@ -1,4 +1,4 @@
-// Flux de paiement MoneyFusion — adapté du flux e-commerce direct
+// Flux de paiement MoneyFusion, adapté du flux e-commerce direct
 // (même API que kellygame.shop, marchand configurable dans config.js).
 (function () {
   function renderSummary() {
@@ -101,10 +101,12 @@
         }
       } catch (err) {
         errorEl.textContent =
-          '❌ ' + (err.message === 'Failed to fetch' ? 'Erreur réseau. Vérifiez votre connexion.' : 'Paiement impossible : ' + err.message);
+          err.message === 'Failed to fetch'
+            ? 'Erreur réseau. Vérifiez votre connexion.'
+            : 'Paiement impossible : ' + err.message;
         errorEl.classList.add('show');
         payBtn.disabled = false;
-        payBtnText.textContent = '🔐 Payer maintenant';
+        payBtnText.textContent = 'Payer maintenant';
       }
     });
   }

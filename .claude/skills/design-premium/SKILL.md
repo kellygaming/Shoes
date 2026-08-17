@@ -401,16 +401,34 @@ Autres points :
 
 ---
 
-## 10. Dette connue sur ce site
+## 10. État de ce site
 
-Écarts relevés lors de l'audit du site actuel, à corriger quand on repasse dessus.
+Le premier audit avait relevé cinq écarts. Tous sont corrigés.
 
-| Écart | Où | Règle |
+| Écart relevé | Correction appliquée | Règle |
 |---|---|---|
-| Tirets cadratins dans le texte visible | `index.html`, `contact.html`, tous les `<title>`, prix du héros | 2.1 |
-| Emoji en guise d'icônes | cartes bénéfices, points du bloc vidéo, méthodes de contact, bouton payer | 2.2 |
-| Accent `#7c3aed` (violet IA) plus second accent `#ec4899` | `css/style.css` | 2.3 |
-| Rangée de trois cartes bénéfices identiques | `index.html` | 2.4 |
-| 6 sur-titres pour 8 sections (plafond : 3) | `index.html` | 2.6 |
+| Tirets cadratins dans le texte visible | Zéro `—` et zéro `–` sur tout le site, vérifié par script | 2.1 |
+| Emoji en guise d'icônes | `js/icons.js` : une seule famille SVG, tracé 1.75, injectée par `data-icon` | 2.2 |
+| Accent violet IA plus second accent rose | Accent unique rose `#d6336c` ; `--accent-deep` et `--accent-soft` sont des nuances du même rose | 2.3 |
+| Rangée de trois cartes identiques | Rangée `.assurance-row` groupée par filets, sans cartes | 2.4 |
+| 6 sur-titres pour 8 sections | 2 sur-titres conservés (héros et bannière promo) | 2.6 |
 
-Corriger ces cinq points fait passer le site de "correct" à "pas fait par une IA".
+### Conventions issues de ces corrections
+
+- **Sémantique des couleurs** : le rose signale la marque et le positif (pastille
+  Promo, badge panier, liens actifs) ; le gris translucide signale l'indisponibilité
+  (badge rupture de stock) ; le rouge `--danger` est réservé aux erreurs de
+  formulaire. Ne pas mélanger ces trois rôles.
+- **Icônes** : n'ajouter une icône qu'en l'enregistrant dans `js/icons.js`, jamais en
+  posant un SVG à la main dans une page. `icons.js` doit être chargé avant
+  `partials.js` sur toute page qui utilise `data-icon` ou `data-stars`.
+- **Ambiances du héros** : les quatre pastilles de couleur du héros sont un dispositif
+  interactif assumé, autorisé une fois par page. Le rose de la marque est l'état par
+  défaut, les trois autres sont des fonds sombres qui ne concurrencent pas l'accent.
+- **Nom de produit** : ne jamais préfixer aveuglément le nom par la marque. Beaucoup
+  de noms la contiennent déjà, ce qui produit "Jordan Air Jordan 1 Mid SE". Voir
+  `fullTitle()` dans `js/hero.js`.
+- **Bloc vidéo sombre** : c'est le seul basculement de thème pleine largeur de la
+  page, délibéré pour mettre la vidéo en valeur. Les bannières promo et contact sont
+  des cartes sombres contenues, pas des basculements de thème. Ne pas en ajouter un
+  deuxième en pleine largeur.
